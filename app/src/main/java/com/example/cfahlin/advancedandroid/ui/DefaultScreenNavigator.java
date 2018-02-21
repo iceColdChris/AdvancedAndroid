@@ -15,9 +15,7 @@ public class DefaultScreenNavigator implements ScreenNavigator {
 	private Router router;
 
 	@Inject
-	DefaultScreenNavigator() {
-
-	}
+	DefaultScreenNavigator() {}
 
 	@Override
 	public void initWithRouter(Router router, Controller controller) {
