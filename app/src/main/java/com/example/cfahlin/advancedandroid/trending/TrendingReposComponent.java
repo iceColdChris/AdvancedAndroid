@@ -12,5 +12,7 @@ public interface TrendingReposComponent  extends AndroidInjector<TrendingReposCo
 	@Subcomponent.Builder
 	abstract class Builder extends AndroidInjector.Builder<TrendingReposController> {
 
+		@Override
+		public void seedInstance(TrendingReposController instance) {}
 	}
 }
