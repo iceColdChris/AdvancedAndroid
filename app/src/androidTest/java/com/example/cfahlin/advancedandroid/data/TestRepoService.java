@@ -1,5 +1,6 @@
 package com.example.cfahlin.advancedandroid.data;
 
+import com.example.cfahlin.advancedandroid.model.Repo;
 import com.example.cfahlin.advancedandroid.test.TestUtils;
 
 import java.io.IOException;
@@ -28,6 +29,11 @@ public class TestRepoService implements RepoService{
 		}
 
 		return Single.error(new IOException());
+	}
+
+	@Override
+	public Single<Repo> getRepo(String repoOwner, String repoName) {
+		return null;
 	}
 
 	public void setSendError(boolean sendError) {

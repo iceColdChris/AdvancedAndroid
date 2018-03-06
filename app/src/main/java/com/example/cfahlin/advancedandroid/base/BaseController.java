@@ -1,6 +1,7 @@
 package com.example.cfahlin.advancedandroid.base;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -20,6 +21,13 @@ public abstract class BaseController extends Controller {
 	private final CompositeDisposable disposables = new CompositeDisposable();
 	private boolean injected = false;
 	private Unbinder unbinder;
+
+
+	public BaseController() {}
+
+	public BaseController(Bundle bundle) {
+		super(bundle);
+	}
 
 	@Override
 	protected void onContextAvailable(@NonNull Context context) {
