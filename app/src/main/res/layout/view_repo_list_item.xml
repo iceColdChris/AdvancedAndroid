@@ -50,12 +50,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:drawableStart="@drawable/ic_star_24dp"
                 tools:text="14,562"/>
             <TextView
                 android:id="@+id/tv_fork_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|end"
+                android:drawableStart="@drawable/ic_fork_24dp"
                 tools:text="1,234"/>
 
         </LinearLayout>

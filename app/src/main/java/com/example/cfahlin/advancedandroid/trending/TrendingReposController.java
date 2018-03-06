@@ -1,5 +1,6 @@
 package com.example.cfahlin.advancedandroid.trending;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -24,6 +25,12 @@ public class TrendingReposController extends BaseController {
 	@BindView(R.id.tv_error) TextView errorText;
 
 	@Override
+	protected void onViewBound(View view) {
+		repoList.setLayoutManager(new LinearLayoutManager(view.getContext()));
+		repoList.setAdapter(new RepoAdapter(presenter));
+	}
+
+	@Override
 	protected Disposable[] subscriptions() {
 		return new Disposable[] {
 				viewModel.loading()
@@ -36,7 +43,7 @@ public class TrendingReposController extends BaseController {
 
 				viewModel.repos()
 						.observeOn(AndroidSchedulers.mainThread())
-						.subscribe(), //TODO
+						.subscribe(((RepoAdapter)repoList.getAdapter())::setData),
 
 				viewModel.error()
 						.observeOn(AndroidSchedulers.mainThread())
