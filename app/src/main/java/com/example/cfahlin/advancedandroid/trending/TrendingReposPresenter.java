@@ -4,6 +4,7 @@ import com.example.cfahlin.advancedandroid.data.RepoRepository;
 import com.example.cfahlin.advancedandroid.data.RepoRequester;
 import com.example.cfahlin.advancedandroid.di.ScreenScope;
 import com.example.cfahlin.advancedandroid.model.Repo;
+import com.example.cfahlin.advancedandroid.ui.ScreenNavigator;
 
 import javax.inject.Inject;
 
@@ -11,11 +12,15 @@ import javax.inject.Inject;
 class TrendingReposPresenter implements RepoAdapter.RepoClickedListener {
 	private final TrendingReposViewModel viewModel;
 	private final RepoRepository repoRepository;
+	private final ScreenNavigator screenNavigator;
 
 	@Inject
-	TrendingReposPresenter(TrendingReposViewModel viewModel, RepoRepository repoRepository) {
+	TrendingReposPresenter(TrendingReposViewModel viewModel,
+						   RepoRepository repoRepository,
+						   ScreenNavigator screenNavigator) {
 		this.viewModel = viewModel;
 		this.repoRepository = repoRepository;
+		this.screenNavigator = screenNavigator;
 		loadRepos();
 	}
 
@@ -28,6 +33,6 @@ class TrendingReposPresenter implements RepoAdapter.RepoClickedListener {
 
 	@Override
 	public void onRepoClicked(Repo repo) {
-
+		screenNavigator.goToRepoDetails(repo.owner().login(), repo.name());
 	}
 }

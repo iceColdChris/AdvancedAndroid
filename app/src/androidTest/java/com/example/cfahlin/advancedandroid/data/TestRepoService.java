@@ -1,9 +1,11 @@
 package com.example.cfahlin.advancedandroid.data;
 
+import com.example.cfahlin.advancedandroid.model.Contributor;
 import com.example.cfahlin.advancedandroid.model.Repo;
 import com.example.cfahlin.advancedandroid.test.TestUtils;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -33,6 +35,11 @@ public class TestRepoService implements RepoService{
 
 	@Override
 	public Single<Repo> getRepo(String repoOwner, String repoName) {
+		return null;
+	}
+
+	@Override
+	public Single<List<Contributor>> getContributors(String url) {
 		return null;
 	}
 

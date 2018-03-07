@@ -32,7 +32,7 @@ public class TestUtils {
 		try {
 			String json = getFileString(path);
 			//noinspection unchecked
-			return (T) TEST_MOSHI.adapter(clazz).fromJson(json);
+			return TEST_MOSHI.adapter(clazz).fromJson(json);
 		} catch (IOException e) {
 			throw new IllegalArgumentException("Could not deserialize: " + path + " into class: " + clazz);
 		}

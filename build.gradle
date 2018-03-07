@@ -19,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://dl.bintray.com/jaimiew/whijai"
+        }
     }
 }
 
@@ -41,6 +44,7 @@ ext {
     timberVersion = '4.6.1'
     butterknifeVersion = '8.8.1'
     mockitoVersion = '2.10.0'
+    glideVersion = '4.2.0'
 
 }
 

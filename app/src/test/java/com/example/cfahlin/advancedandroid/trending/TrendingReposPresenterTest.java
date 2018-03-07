@@ -4,6 +4,7 @@ import com.example.cfahlin.advancedandroid.data.RepoRepository;
 import com.example.cfahlin.advancedandroid.data.TrendingReposResponse;
 import com.example.cfahlin.advancedandroid.model.Repo;
 import com.example.cfahlin.advancedandroid.testutils.TestUtils;
+import com.example.cfahlin.advancedandroid.ui.ScreenNavigator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +30,7 @@ public class TrendingReposPresenterTest {
 	@Mock private Consumer<Throwable> onErrorConsumer;
 	@Mock private Consumer<List<Repo>> onSuccessConsumer;
 	@Mock private Consumer<Boolean> loadingConsumer;
+	@Mock private ScreenNavigator screenNavigator;
 
 	private TrendingReposPresenter presenter;
 
@@ -82,7 +84,12 @@ public class TrendingReposPresenterTest {
 
 	@Test
 	public void onRepoClicked() throws Exception {
-		//TODO
+			Repo repo = TestUtils.loadJson("mock/get_repo.json", Repo.class);
+			setUpSuccess();
+			initializePresenter();
+			presenter.onRepoClicked(repo);
+
+			verify(screenNavigator).goToRepoDetails(repo.owner().login(), repo.name());
 	}
 
 	private List<Repo> setUpSuccess() {
@@ -102,6 +109,6 @@ public class TrendingReposPresenterTest {
 	}
 
 	private void initializePresenter() {
-		presenter = new TrendingReposPresenter(viewModel, repoRepository);
+		presenter = new TrendingReposPresenter(viewModel, repoRepository, screenNavigator);
 	}
 }
