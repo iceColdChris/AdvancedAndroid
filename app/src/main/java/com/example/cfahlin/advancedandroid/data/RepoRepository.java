@@ -52,6 +52,11 @@ public class RepoRepository {
                 .subscribeOn(scheduler);
     }
 
+    public void clearCache() {
+        cachedTrendingRepos.clear();
+        cachedContributors.clear();
+    }
+
     private Maybe<List<Contributor>> cachedContributors(String url) {
         return Maybe.create(emitter -> {
             if(cachedContributors.containsKey(url))
@@ -99,4 +104,6 @@ public class RepoRepository {
                 })
                 .toMaybe();
     }
+
+
 }

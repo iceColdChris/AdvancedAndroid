@@ -10,7 +10,6 @@ import com.example.cfahlin.advancedandroid.di.ActivityScope;
 
 import javax.inject.Inject;
 
-@ActivityScope
 public class DefaultScreenNavigator implements ScreenNavigator {
 
 
