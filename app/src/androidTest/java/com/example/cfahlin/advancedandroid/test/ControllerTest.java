@@ -12,7 +12,7 @@ import com.example.cfahlin.advancedandroid.ui.TestScreenNavigator;
 import org.junit.Rule;
 
 public abstract class ControllerTest {
-    @Rule ControllerTestRule<MainActivity> testRule = new ControllerTestRule<>(MainActivity.class);
+    @Rule public ControllerTestRule<MainActivity> testRule = new ControllerTestRule<>(MainActivity.class);
 
     protected TestRepoService repoService = testRule.repoService;
     protected RepoRepository repoRepository = testRule.repoRepository;
