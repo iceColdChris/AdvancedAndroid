@@ -6,6 +6,7 @@ import com.example.cfahlin.advancedandroid.data.TestRepoServiceModule;
 import com.example.cfahlin.advancedandroid.networking.ServiceModule;
 import com.example.cfahlin.advancedandroid.trending.TrendingReposControllerTest;
 import com.example.cfahlin.advancedandroid.ui.NavigationModule;
+import com.example.cfahlin.advancedandroid.ui.TestActivityViewInterceptorModule;
 import com.example.cfahlin.advancedandroid.ui.TestNavigationModule;
 import com.example.cfahlin.advancedandroid.ui.TestScreenNavigator;
 
@@ -20,6 +21,7 @@ import dagger.Component;
 		TestRepoServiceModule.class,
 		ServiceModule.class,
 		TestNavigationModule.class,
+		TestActivityViewInterceptorModule.class
 })
 public interface TestApplicationComponent extends ApplicationComponent{
 	void inject(TrendingReposControllerTest trendingReposControllerTest);
