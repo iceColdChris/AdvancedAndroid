@@ -35,7 +35,7 @@ ext {
     retrofitVersion = '2.3.0'
     moshiVersion = '1.5.0'
     autoValueVersion = '1.5.1'
-    autoValueMoshiVersion = '0.4.3'
+    autoValueMoshiVersion = '0.4.7'
     rxJavaVersion = '2.1.9'
     rxAndroidVersion = '2.0.2'
     rxRelayVersion = '2.0.0'
