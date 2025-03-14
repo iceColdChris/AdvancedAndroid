@@ -41,7 +41,7 @@ ext {
     rxRelayVersion = '2.0.0'
     rxBindingVersion = '2.0.0'
     conductorVersion = '2.1.4'
-    threeTenAbpVersion='1.0.5'
+    threeTenAbpVersion='1.4.9'
     timberVersion = '4.6.1'
     butterknifeVersion = '8.8.1'
     mockitoVersion = '2.10.0'
